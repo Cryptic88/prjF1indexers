@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace prjF1indexers
 {
-    public class F1RaceDetails
+    public class cats
     {
-        int laps, raceWinners;
-        string raceName, trackDifficulty;
+        int id;
+        string Name, type;
 
-        public F1RaceDetails(int laps, int raceWinners, string raceName, string trackDifficulty)
+        public cats(int id, string name, string type)
         {
-            this.laps = laps;
-            this.raceWinners = raceWinners;
-            this.raceName = raceName;
-            this.trackDifficulty = trackDifficulty;
+            this.id = id;
+            this.Name = Name;
+            this.type = type;
         }
 
         public object this[int index]
@@ -24,26 +23,22 @@ namespace prjF1indexers
             get
             {
                 if (index == 0)
-                    return this.laps;
+                    return this.id;
                 else if (index == 1)
-                    return this.raceWinners;
+                    return this.Name;
                 else if (index == 2)
-                    return this.raceName;
-                else if (index == 3)
-                    return this.trackDifficulty;
+                    return this.type;
                 return null;
             }
 
             set
             {
                 if (index == 0)
-                    this.laps = (int)value;
+                    this.id = (int)value;
                 else if (index == 1)
-                    this.raceWinners = (int)value;
+                    this.Name = (string)value;
                 else if (index == 2)
-                    this.raceName = (string)value;
-                else if (index == 3)
-                    this.trackDifficulty = (string)value;
+                    this.type = (string)value;
             }
         }
 
@@ -51,27 +46,23 @@ namespace prjF1indexers
         {
             get
             {
-                if (attrName == "laps")
-                    return this.laps;
-                else if (attrName == "raceWinners")
-                    return this.raceWinners;
-                else if (attrName == "name")
-                    return this.raceName;
-                else if (attrName == "difficulty")
-                    return this.trackDifficulty;
+                if (attrName == "ID Number")
+                    return this.id;
+                else if (attrName == "Cat Name")
+                    return this.Name;
+                else if (attrName == "Type of cat")
+                    return this.type;
                 return null;
             }
 
             set
             {
-                if (attrName.ToLower().Equals("laps"))
-                    this.laps = (int)value;
-                else if (attrName.ToLower().Equals("raceWinners"))
-                    this.raceWinners = (int)value;
+                if (attrName.ToLower().Equals("ID Number"))
+                    this.id = (int)value;
+                else if (attrName.ToLower().Equals("Cat Name"))
+                    this.Name = (string)value;
                 else if (attrName.ToLower().Equals("name"))
-                    this.raceName = (string)value;
-                else if (attrName.ToLower().Equals("difficulty"))
-                    this.trackDifficulty = (string)value;
+                    this.type = (string)value;
             }
         }
     }
