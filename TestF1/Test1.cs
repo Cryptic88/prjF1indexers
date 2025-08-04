@@ -9,22 +9,22 @@ namespace TestF1
         [TestMethod]
         public void TestID()
         {
-            F1RaceDetails f1 = new F1RaceDetails(44, 75, "Spa Belguim", "Standard");
-            Assert.AreEqual(f1[0], 44);
+            cats cat = new cats(1, "Ashe", "Gray");
+            Assert.AreEqual(cat[0], 44);
         }
 
         [TestMethod]
         public void TestUpdatedWinners()
         {
-            F1RaceDetails f1 = new F1RaceDetails(44, 75, "Spa Belguim", "Standard");
-            f1[1] = 80;
-            Assert.AreEqual(f1[1], 80);
+            cats f1 = new cats(80,"Blu", "Russian blue");
+            f1[1] = 44;
+            Assert.AreEqual(f1[1], 44);
         }
 
         [TestMethod]
         public void TestUpdateName()
         {
-            F1RaceDetails f1 = new F1RaceDetails(44, 75, "Spa Belguim", "Standard");
+            cats f1 = new cats(3, "Sammy", "Calico");
             f1[2] = "Spa";
             Assert.AreEqual(f1[2], "Spa");
         }
@@ -32,15 +32,15 @@ namespace TestF1
         [TestMethod]
         public void testDifficulty()
         {
-            F1RaceDetails f1 = new F1RaceDetails(44, 75, "Spa Belguim", "Standard");
-            Assert.AreEqual(f1["difficulty"], "Standard"); //string index
+            cats cat = new cats(1, "Ashe", "Gray");
+            Assert.AreEqual(cat["Name"], "Ashe"); //string index
         }
 
         [TestMethod]
         public void TestLaps()
         {
-            F1RaceDetails f1 = new F1RaceDetails(44, 75, "Spa Belguim", "Standard");
-            Assert.AreNotEqual(f1[0], 42);
+            cats cat = new cats(1, "Ashe", "Gray");
+            Assert.AreNotEqual(cat[0], 44);
         }
     }
 }
